@@ -30,8 +30,8 @@
    
 5. Исправленный фрагмент кода:
    
-   ```hcl
-   resource "docker_image" "nginx"  {
+```HCL
+resource "docker_image" "nginx"  {
   name         = "nginx:latest"
   keep_locally = true
 }
