@@ -16,6 +16,36 @@
 9. Объясните, почему при этом не был удалён docker-образ **nginx:latest**. Ответ **ОБЯЗАТЕЛЬНО НАЙДИТЕ В ПРЕДОСТАВЛЕННОМ КОДЕ**, а затем **ОБЯЗАТЕЛЬНО ПОДКРЕПИТЕ** строчкой из документации [**terraform провайдера docker**](https://docs.comcloud.xyz/providers/kreuzwerker/docker/latest/docs).  (ищите в классификаторе resource docker_image )
 
 
+
+### Решение 2
+
+
+2. Согласно  .gitignore, допустимо сохранить личную, секретную информацию в файле personal.auto.tfvars.
+3. "result": "Vb5T2O4F9iW2FGMD".
+4. 1-ая ошибка - блок ресурса должен иметь 2 метки - тип и имя , здесь только имя.
+   2-ая ошибка - метка имени должна начинаться с буквы , здесь с цифры.
+   3-ая ошибка - данный ресурс не был описан в манифесте ( ошибка в названии ).
+   ![1.png](./img/1.png)
+
+   
+5. r
+   ```hcl
+   resource "docker_image" "nginx"  {
+  name         = "nginx:latest"
+  keep_locally = true
+}
+
+resource "docker_container" "nginx" {
+  image = docker_image.nginx.image_id
+  name  = "example_${random_password.random_string.result}"
+
+  ports {
+    internal = 80
+    external = 9090
+  }
+}
+   ```
+![2.png](./img/2.png)
 ------
 
 
