@@ -60,9 +60,14 @@ resource "docker_container" "nginx" {
 ![3.png](./img/3.png)
 
 
-8.
+7. Содержимое файла **terraform.tfstate** после уничтожения ресурсов:
 
 ![4.png](./img/4.png)
+
+8. Docker-образ **nginx:latest** не был удален , так как в предаствленном коде использовался аргумент keep_locally = true
+
+Строчка из документации:
+keep_locally (Boolean) If true, then the Docker image won't be deleted on destroy operation. If this is false, it will delete the image from the docker local storage on destroy operation.
 
 ------
 
