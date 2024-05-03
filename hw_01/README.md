@@ -28,7 +28,8 @@
    ![1.png](./img/1.png)
 
    
-5. r
+5. Исправленный фрагмент кода:
+   
    ```hcl
    resource "docker_image" "nginx"  {
   name         = "nginx:latest"
@@ -44,7 +45,8 @@ resource "docker_container" "nginx" {
     external = 9090
   }
 }
-   ```
+```
+
 ![2.png](./img/2.png)
 ------
 
