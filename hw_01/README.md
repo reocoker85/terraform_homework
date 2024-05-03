@@ -46,7 +46,6 @@ resource "docker_container" "nginx" {
   }
 }
 ```
-
 ![2.png](./img/2.png)
 ------
 
