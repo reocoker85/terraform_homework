@@ -118,10 +118,7 @@ resource "docker_container" "db" {
     internal = 3306
     external = 3306
     ip = "127.0.0.1"
-  }
-  depends_on   = [
-                    docker_image.mysql
-                 ]
+  }                 ]
 }
 
 
