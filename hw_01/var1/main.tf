@@ -84,7 +84,6 @@ resource "yandex_compute_instance" "instance-based-on-coi" {
     preemptible = true
   }
   metadata = {
-#    docker-compose = file("./compose.yaml")
     user-data = file("./meta.txt")
   }
 }
