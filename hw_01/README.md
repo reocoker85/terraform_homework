@@ -98,7 +98,7 @@ keep_locally (Boolean) If true, then the Docker image won't be deleted on destro
 ![6.png](./img/6.png)
 ![7.png](./img/7.png)
 
-Решил зайти с другой стороны, [main.tf](./var2/main.tf) тут ,правда, пришлось еще и нагромоздить [template.tf](./var1/template.tf). 
+Решил зайти с другой стороны, исользуем запуск через metadata [main.tf](./var2/main.tf) тут ,правда, пришлось еще и нагромоздить [template.tf](./var1/template.tf). 
 С первого раза выдает ошибку
 ![8.png](./img/8.png)
 Но при вторичном apply , все работает как часы :
