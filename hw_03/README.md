@@ -193,6 +193,15 @@ ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]}  fqdn
   ]
 }
 ```
+### Решение 7
+
+![7.png](./img/7.png)
+
+"Сырова-то" вышло , но пока больше идей нет (
+
+
+
+
 
 ### Критерии оценки
 
