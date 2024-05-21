@@ -199,7 +199,11 @@ ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]}  fqdn
 
 "Сырова-то" вышло , но пока больше идей нет (
 
+```hcl
 
+ {"network_id" = local.vpc.network_id,"subnet_ids" = [for i in range(0, length(local.vpc.subnet_ids)) : local.vpc.subnet_ids[i] if i != 2],"subnet_zones" = [for i in range(0, length(local.vpc.subnet_zones)) : local.vpc.subnet_zones[i] if i != 2]}
+
+```
 
 
 
