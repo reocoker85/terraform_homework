@@ -81,7 +81,7 @@ storage ansible_host=<внешний ip-адрес> fqdn=<полное доме�
 [webservers]
 
 %{~ if length(webservers) > 0 ~}
-%{~ for i in webservers ~}
+%{~ for i in webservers }
 ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"] == "" ? i["network_interface"][0]["ip_address"] : i["network_interface"][0]["nat_ip_address"]}  fqdn=${i["fqdn"]}
 %{~ endfor ~}
 %{~ endif ~}
@@ -89,14 +89,14 @@ ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"] == "" 
 
 [databases]
 
-%{~ for i in databases ~}
+%{~ for i in databases }
 ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]}  fqdn=${i["fqdn"]}
 %{~ endfor ~}
 
 
 [storage]
 
-%{~ for i in storage ~}
+%{~ for i in storage }
 ${i["name"]}   ansible_host=${i["network_interface"][0]["nat_ip_address"]}  fqdn=${i["fqdn"]}
 %{~ endfor ~}
 
